@@ -7,7 +7,7 @@ Content-Type: application/json
   "name": "Amazon 22",
   "symbol": "AMZN22",
   "price": 1000,
-  "image": "http://example.com/image.jpg"
+  "image": "amzn.jpg"
 }
 
 ###
@@ -43,3 +43,18 @@ Content-Type: application/json
   "assetId": "{{ assetId }}",
   "shares": 100
 }
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "walletId": "{{ walletId }}",
+  "assetId": "{{ assetId }}",
+  "shares": 10,
+  "type": "BUY",
+  "price": 100
+}
+
+###
+GET http://localhost:3000/orders?walletId={{ walletId }}
